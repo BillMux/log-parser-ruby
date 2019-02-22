@@ -2,7 +2,12 @@ require_relative '../lib/parser'
 require 'rspec'
 
 describe Parser do
-  it 'exists' do
-    expect(subject).to be
+
+  before(:each) do
+    @parser = Parser.new('../src/testserver.log')
+  end
+
+  it 'can return an array of urls' do
+    expect(@parser.urls[0]).to eq('/help_page/1')
   end
 end
