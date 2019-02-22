@@ -26,6 +26,8 @@ Run: `rspec`
 
 You should see a coverage report from SimpleCov
 
+The specs are using a test .log file, containing only the first ten lines of the original .log file
+
 ## Linting
 
 Run: `rubocop`
