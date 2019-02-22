@@ -10,16 +10,15 @@ class Parser
 
   def parse
     create_arrays
-
-    for x in 0...@urls.length
-      @url_ip_pairs[x] = { @urls[x] => @ips[x] }
-    end
-
+    create_url_ip_hashes
   end
 
   private
 
   def create_url_ip_hashes
+    for x in 0...@urls.length
+      @url_ip_pairs[x] = { @urls[x] => @ips[x] }
+    end
   end
 
   def create_arrays
