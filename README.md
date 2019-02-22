@@ -19,3 +19,13 @@
 You should now be able to see a list of urls and ip addresses separately by calling `p.urls` or `p.ips`
 
 You can also see how these strings are pairing by calling `p.url_ip_pairs`
+
+## Running the tests
+
+Run: `rspec`
+
+You should see a coverage report from SimpleCov
+
+## Linting
+
+Run: `rubocop`
