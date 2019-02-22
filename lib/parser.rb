@@ -17,7 +17,7 @@ class Parser
 
   def show_visits
     @urls.each { |url| @visits[url] += 1 }
-    @visits.sort_by { |_url, count| count }.to_h
+    @visits.sort_by { |_url, count| count }.reverse.to_h
   end
 
   def show_unique_visits
@@ -26,7 +26,7 @@ class Parser
         @unique_visits[url] += 1
       end
     end
-    @unique_visits
+    @unique_visits.sort_by { |_url, count| count }.reverse.to_h
   end
 
   private
