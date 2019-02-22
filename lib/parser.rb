@@ -1,23 +1,26 @@
 class Parser
-  attr_reader :urls, :ips, :url_ip_hash
+  attr_reader :urls, :ips, :url_ip_pairs
 
   def initialize(filename)
     @file = File.open(filename)
     @urls  = []
     @ips = []
-    @url_ip_hash = []
+    @url_ip_pairs = []
   end
 
   def parse
     create_arrays
 
     for x in 0...@urls.length
-      @url_ip_hash[x] = { @urls[x] => @ips[x] }
+      @url_ip_pairs[x] = { @urls[x] => @ips[x] }
     end
 
   end
 
   private
+
+  def create_url_ip_hashes
+  end
 
   def create_arrays
     @file.readlines.each do |line|
