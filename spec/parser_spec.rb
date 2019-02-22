@@ -26,4 +26,15 @@ describe Parser do
     @parser.show_visits
     expect(@parser.visits['/help_page/1']).to eq(4)
   end
+
+  it 'hashes all urls and their visits counts' do
+    expect(@parser.show_visits).to eq(
+      '/help_page/1' => 4,
+      '/contact' => 1,
+      '/home' => 2,
+      '/about/2' => 1,
+      '/index' => 1,
+      '/about' => 1,
+    )
+  end
 end
