@@ -20,17 +20,23 @@ class Parser
 
   def show_visits
     @urls.each { |url| @visits[url] += 1 }
-    sort(@visits)
+    print_views(sort(@visits))
   end
 
   def show_unique_visits
     @url_ip_pairs.uniq.each do |hash|
       hash.each { |url, _ip| @unique_visits[url] += 1 }
     end
-    sort(@unique_visits)
+    print_views(sort(@unique_visits))
   end
 
   private
+
+  def print_views(list)
+    list.each do |url, count|
+      puts "#{url}: #{count} views"
+    end
+  end
 
   def sort(hash)
     hash.sort_by { |_url, count| count }.reverse.to_h
