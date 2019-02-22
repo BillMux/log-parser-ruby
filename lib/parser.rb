@@ -7,6 +7,7 @@ class Parser
     @ips = []
     @url_ip_pairs = []
     @visits = Hash.new(0)
+    @unique_visits = Hash.new(0)
   end
 
   def parse
@@ -15,10 +16,8 @@ class Parser
   end
 
   def show_visits
-    @urls.each do |url|
-      @visits[url] += 1
-    end
-    @visits.sort_by { |url, count| count }.to_h
+    @urls.each { |url| @visits[url] += 1 }
+    @visits.sort_by { |_url, count| count }.to_h
   end
 
   private
