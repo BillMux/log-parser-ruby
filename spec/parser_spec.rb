@@ -21,4 +21,9 @@ describe Parser do
       '/help_page/1' => '126.318.035.038'
     )
   end
+
+  it 'collect each urls visit count' do
+    @parser.show_visits
+    expect(@parser.visits['/help_page/1']).to eq(4)
+  end
 end
