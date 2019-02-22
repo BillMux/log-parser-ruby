@@ -20,6 +20,15 @@ class Parser
     @visits.sort_by { |_url, count| count }.to_h
   end
 
+  def show_unique_visits
+    @url_ip_pairs.uniq.each do |hash|
+      hash.each do |url, ip|
+        @unique_visits[url] += 1
+      end
+    end
+    @unique_visits
+  end
+
   private
 
   def create_url_ip_hashes
