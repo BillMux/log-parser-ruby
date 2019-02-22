@@ -1,5 +1,11 @@
 # Parse information from a .log file
 
+Using this repo, you can view full details of a browsing log, and return them as:
+
+- A list of pages ordered from most to least views
+
+- A list of pages ordered from most to least unique views
+
 ## Getting started
 
 1. Clone repo
@@ -19,6 +25,10 @@
 You should now be able to see a list of urls and ip addresses separately by calling `p.urls` or `p.ips`
 
 You can also see how these strings are pairing by calling `p.url_ip_pairs`
+
+To see a hash of pages ordered by views: `p.show_visits`
+
+To see a hash of pages ordered by unique views: `p.show_unique_visits`
 
 ## Running the tests
 
