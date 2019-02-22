@@ -17,7 +17,7 @@ describe Parser do
   end
 
   it 'puts urls and addresses into hash' do
-    expect(@parser.url_ip_hash[0]).to eq(
+    expect(@parser.url_ip_pairs[0]).to eq(
       '/help_page/1' => '126.318.035.038'
     )
   end
