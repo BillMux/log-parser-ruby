@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/parser'
 require 'rspec'
 
@@ -6,7 +8,7 @@ describe Parser do
     @parser = Parser.new('src/testserver.log')
     @parser.parse
   end
-  
+
   it 'collect each urls visit count' do
     @parser.show_visits
     expect(@parser.visits['/help_page/1']).to eq(4)
