@@ -15,4 +15,10 @@ describe Parser do
   it 'can return an array of ip addresses' do
     expect(@parser.ips[0]).to eq('126.318.035.038')
   end
+
+  it 'puts urls and addresses into hash' do
+    expect(@parser.url_ip_hash[0]).to eq(
+      '/help_page/1' => '126.318.035.038'
+    )
+  end
 end
