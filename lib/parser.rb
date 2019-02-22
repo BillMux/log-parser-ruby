@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
+# pass in log file as arg, call .parse to organise
 class Parser
   attr_reader :urls, :ips, :url_ip_pairs, :visits
 
   def initialize(filename)
     @file = File.open(filename)
-    @urls  = []
+    @urls = []
     @ips = []
     @url_ip_pairs = []
     @visits = Hash.new(0)
