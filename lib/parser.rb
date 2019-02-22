@@ -1,4 +1,5 @@
 class Parser
+  attr_reader :urls, :ips
 
   def initialize(filename)
     @file = File.open(filename)
