@@ -30,6 +30,8 @@ To see a hash of pages ordered by views: `p.show_visits`
 
 To see a hash of pages ordered by unique views: `p.show_unique_visits`
 
+When calling the two method above, you should also see a formatted list in stdout
+
 ## Running the tests
 
 Run: `rspec`
