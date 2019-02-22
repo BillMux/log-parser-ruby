@@ -4,7 +4,7 @@ require 'rspec'
 describe Parser do
 
   before(:each) do
-    @parser = Parser.new('../src/testserver.log')
+    @parser = Parser.new('src/testserver.log')
     @parser.parse
   end
 
