@@ -18,7 +18,7 @@ class Parser
     @urls.each do |url|
       @visits[url] += 1
     end
-    @visits.sort_by { |url, count| count }
+    @visits.sort_by { |url, count| count }.to_h
   end
 
   private
