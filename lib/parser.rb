@@ -4,8 +4,7 @@
 class Parser
   attr_reader :urls, :ips, :url_ip_pairs, :visits
 
-  def initialize(filename)
-    @file = File.open(filename)
+  def initialize
     @urls = []
     @ips = []
     @url_ip_pairs = []
@@ -13,8 +12,9 @@ class Parser
     @unique_visits = Hash.new(0)
   end
 
-  def parse
-    create_arrays
+  def parse(filename)
+    file = File.open(filename)
+    create_arrays(file)
     create_url_ip_hashes
   end
 
@@ -48,8 +48,8 @@ class Parser
     end
   end
 
-  def create_arrays
-    @file.readlines.each do |line|
+  def create_arrays(file)
+    file.readlines.each do |line|
       @urls << line.split(' ').first
       @ips << line.split(' ').last
     end

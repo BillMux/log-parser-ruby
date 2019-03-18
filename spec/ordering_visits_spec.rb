@@ -3,10 +3,10 @@
 require_relative '../lib/parser'
 
 describe Parser do
-  subject { Parser.new('src/testserver.log') }
+  subject { Parser.new }
 
   before(:each) do
-    subject.parse
+    subject.parse('src/testserver.log')
   end
 
   it 'collect each urls visit count' do

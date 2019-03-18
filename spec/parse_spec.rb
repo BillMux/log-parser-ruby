@@ -4,11 +4,11 @@ require_relative '../lib/parser'
 require 'rspec'
 
 describe Parser do
-  subject { Parser.new('src/testserver.log') }
+  subject { Parser.new }
 
   describe '#parse' do
     before(:each) do
-      subject.parse
+      subject.parse('src/testserver.log')
     end
 
     it 'can return an array of urls' do
