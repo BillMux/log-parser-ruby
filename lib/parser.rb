@@ -33,9 +33,7 @@ class Parser
   private
 
   def print_views(list)
-    list.each do |url, count|
-      puts "#{url}: #{count} views"
-    end
+    list.each { |url, count| puts "#{url}: #{count} views" }
   end
 
   def sort(hash)
@@ -43,15 +41,13 @@ class Parser
   end
 
   def create_url_ip_hashes
-    for x in 0...@urls.length
-      @url_ip_pairs[x] = { @urls[x] => @ips[x] }
-    end
+    @urls.each_index { |i| @url_ip_pairs[i] = { @urls[i] => @ips[i] } }
   end
 
   def create_arrays(file)
     file.readlines.each do |line|
-      @urls << line.split(' ').first
-      @ips << line.split(' ').last
+      @urls << line.split.first
+      @ips << line.split.last
     end
   end
 end
