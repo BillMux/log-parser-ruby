@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
 require_relative '../lib/parser'
-require 'rspec'
 
 describe Parser do
+  subject { Parser.new('src/testserver.log') }
+
   before(:each) do
-    @parser = Parser.new('src/testserver.log')
-    @parser.parse
+    subject.parse
   end
 
   it 'collect each urls visit count' do
-    @parser.show_visits
-    expect(@parser.visits['/help_page/1']).to eq(4)
+    subject.show_visits
+    expect(subject.visits['/help_page/1']).to eq(4)
   end
 
   it 'hashes all urls and their visits counts' do
-    expect(@parser.show_visits).to eq(
+    expect(subject.show_visits).to eq(
       '/help_page/1' => 4,
       '/home' => 2,
       '/contact' => 1,
@@ -26,7 +26,7 @@ describe Parser do
   end
 
   it 'can display results in order of unique visits' do
-    expect(@parser.show_unique_visits).to eq(
+    expect(subject.show_unique_visits).to eq(
       '/help_page/1' => 3,
       '/contact' => 1,
       '/home' => 1,
