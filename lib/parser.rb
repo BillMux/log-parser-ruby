@@ -25,7 +25,7 @@ class Parser
 
   def show_unique_visits
     @url_ip_pairs.uniq.each do |hash|
-      hash.each { |url, _ip| @unique_visits[url] += 1 }
+      hash.each_key { |url| @unique_visits[url] += 1 }
     end
     print_views(sort(@unique_visits))
   end
