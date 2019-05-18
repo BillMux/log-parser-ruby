@@ -22,7 +22,7 @@ describe Parser do
       "/about: 1 view\n"\
       "/index: 1 view\n"\
       "/about/2: 1 view\n"\
-      "/contact: 1 view\n"
+      "/contact: 1 view"
     )
   end
 
@@ -33,7 +33,7 @@ describe Parser do
       "/index: 1 view\n"\
       "/about/2: 1 view\n"\
       "/home: 1 view\n"\
-      "/contact: 1 view\n"
+      "/contact: 1 view"
     )
   end
 end
