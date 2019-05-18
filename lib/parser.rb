@@ -33,7 +33,11 @@ class Parser
   private
 
   def print_views(list)
-    list.each { |url, count| puts "#{url}: #{count} views" }
+    chart = ''
+    list.each do |url, count|
+      chart += "#{url}: #{count} view#{'s' if count > 1}\n"
+    end
+    chart
   end
 
   def sort(hash)
