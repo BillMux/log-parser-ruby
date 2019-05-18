@@ -15,24 +15,25 @@ describe Parser do
   end
 
   it 'hashes all urls and their visits counts' do
+    # subject.show_unique_visits
     expect(subject.show_visits).to eq(
-      '/help_page/1' => 4,
-      '/home' => 2,
-      '/contact' => 1,
-      '/about/2' => 1,
-      '/index' => 1,
-      '/about' => 1
+      "/help_page/1: 4 views\n"\
+      "/home: 2 views\n"\
+      "/about: 1 view\n"\
+      "/index: 1 view\n"\
+      "/about/2: 1 view\n"\
+      "/contact: 1 view\n"
     )
   end
 
-  it 'can display results in order of unique visits' do
+  it 'can display formatted results in order of unique visits' do
     expect(subject.show_unique_visits).to eq(
-      '/help_page/1' => 3,
-      '/contact' => 1,
-      '/home' => 1,
-      '/about/2' => 1,
-      '/index' => 1,
-      '/about' => 1
+      "/help_page/1: 3 views\n"\
+      "/about: 1 view\n"\
+      "/index: 1 view\n"\
+      "/about/2: 1 view\n"\
+      "/home: 1 view\n"\
+      "/contact: 1 view\n"
     )
   end
 end
