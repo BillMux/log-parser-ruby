@@ -37,7 +37,7 @@ class Parser
     list.each do |url, count|
       chart += "#{url}: #{count} view#{'s' if count > 1}\n"
     end
-    chart
+    chart.chomp
   end
 
   def sort(hash)
